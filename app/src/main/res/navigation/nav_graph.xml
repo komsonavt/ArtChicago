@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/artwork_fragment">
+    <fragment
+        android:id="@+id/artwork_fragment"
+        android:name="com.komsonavt.MetropolitanGallery.artworks.ArtworkFragment"
+        tools:layout="@layout/artwork_fragment"
+        android:label="Artworks">
+        <action
+            android:id="@+id/action_departments_fragment_to_catalog_fragment"
+            app:destination="@id/catalog_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalog_fragment"
+        android:name="com.komsonavt.MetropolitanGallery.catalog.CatalogFragment"
+        tools:layout="@layout/catalog_fragment"
+        android:label="Catalog">
+        <action
+            android:id="@+id/action_catalog_fragment_to_description_fragment"
+            app:destination="@id/description_masterpiece_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+        <argument
+            android:name="imageId"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/description_masterpiece_fragment"
+        android:name="com.komsonavt.MetropolitanGallery.descriptionMasterpiece.MasterpieceFragment"
+        tools:layout="@layout/description_masterpiece_fragment"
+        android:label="Description">
+        <argument android:name="masterpieceId"
+            app:argType="string"/>
+
+    </fragment>
+</navigation>

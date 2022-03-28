@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Metropolitan gallery</string>
+    <string name="departments">Подразделения</string>
+    <string name="gallery">Галерея</string>
+    <string name="description">Подробности</string>
+</resources>
