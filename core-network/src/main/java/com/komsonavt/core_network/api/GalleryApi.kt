@@ -1,13 +1,18 @@
 package com.komsonavt.core_network.api
 
+import androidx.paging.PagingSource
 import com.komsonavt.core_network.model.*
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+
 interface GalleryApi {
     @GET("/api/v1/artworks")
-    suspend fun getArtworks(): PageResult<Artwork>
+    suspend fun getArtworks(
+        @Query("page") page:Int,
+        @Query("limit") limit:Int,
+    ): PageResult<Artwork>
 
     @GET("/api/v1/artworks/{id}")
     suspend fun getArtworkById(@Path("id")id:Int): Artwork

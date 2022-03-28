@@ -43,6 +43,5 @@ abstract class NetworkModule{
                 )
                 .build()
                 .create(GalleryApi::class.java)
-
     }
 }

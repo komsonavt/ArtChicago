@@ -12,6 +12,6 @@ abstract class ArtworkModule{
     @Binds
     @IntoMap
     @ViewModelKey(ArtworkViewModel::class)
-    abstract fun departmentViewModel(viewModel: ArtworkViewModel):ViewModel
+    abstract fun artworkViewModel(viewModel: ArtworkViewModel):ViewModel
 
 }

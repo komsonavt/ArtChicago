@@ -10,7 +10,7 @@ import javax.inject.Scope
 
 @DepartmentScope
 @Component(modules = [ArtworkModule::class])
-interface DepartmentComponent {
+interface ArtworkComponent {
 
     fun viewModelFactory() : ViewModelFactory
 
@@ -23,12 +23,12 @@ interface DepartmentComponent {
         @BindsInstance
         fun api(api: GalleryApi) : Builder
 
-        fun build():DepartmentComponent
+        fun build():ArtworkComponent
     }
 
     companion object{
         fun create() = with(DI.appComponent){
-            DaggerDepartmentComponent.builder()
+            DaggerArtworkComponent.builder()
                 .resources(resources())
                 .api(DI.networkComponent.api())
                 .build()

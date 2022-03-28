@@ -81,5 +81,7 @@ dependencies {
 
     implementation 'org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2'
 
+    implementation libs.paging
+
      implementation project(":core-network") //TODO remove
 }
