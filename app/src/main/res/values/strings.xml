@@ -3,4 +3,8 @@
     <string name="departments">Подразделения</string>
     <string name="gallery">Галерея</string>
     <string name="description">Подробности</string>
+    
+    <string name="years_create">Годы создания</string>
+    <string name="year_in_collection">Год приобретения</string>
+    <string name="description_masterpiece">Описание произведения</string>
 </resources>

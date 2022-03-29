@@ -1,4 +1,4 @@
-package com.komsonavt.core_network
+package com.komsonavt.MetropolitanGallery.dataSource
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -14,7 +14,7 @@ class ArtworkRepository @Inject constructor(
     fun getArtworksResultStream() : Flow<PagingData<Artwork>>{
         return Pager(
             config = PagingConfig(enablePlaceholders = false, pageSize = 25),
-            pagingSourceFactory = {ArtworksPagingSource(api)}
+            pagingSourceFactory = { ArtworksPagingSource(api) }
         ).flow
     }
 }

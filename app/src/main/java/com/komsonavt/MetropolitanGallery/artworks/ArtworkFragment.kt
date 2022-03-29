@@ -21,7 +21,10 @@ class ArtworkFragment : Fragment(R.layout.artwork_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupViews()
+    }
 
+    private fun setupViews(){
         with(binding){
             departmentList.adapter = adapter
             lifecycleScope.launchWhenResumed {
@@ -31,5 +34,4 @@ class ArtworkFragment : Fragment(R.layout.artwork_fragment) {
             }
         }
     }
-
 }

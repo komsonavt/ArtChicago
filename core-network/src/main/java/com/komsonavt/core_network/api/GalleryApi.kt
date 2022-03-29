@@ -14,14 +14,17 @@ interface GalleryApi {
         @Query("limit") limit:Int,
     ): PageResult<Artwork>
 
-    @GET("/api/v1/artworks/{id}")
-    suspend fun getArtworkById(@Path("id")id:Int): Artwork
+    @GET("api/v1/artworks/{id}")
+    suspend fun getArtworkById(@Path("id")id : Int) : ImageResult<Artwork>
 
     @GET("/api/v1/images")
-    suspend fun getImageDescription(@Query("imageGuid") guid: String) : ImageResult<Image>
+    suspend fun getImageDescription(@Query("imageGuid") guid : String) : ImageResult<Image>
 
     @GET("/iiif/2/{identifier}/full/843,/0/default.jpg")
-    suspend fun getPicture(@Path("identifier") identifier:String)
+    suspend fun getPicture(@Path("identifier") identifier : String) : String
+
+    @GET("api/v1/artworks/{id}/manifest.json")
+    suspend fun getManifest(@Path("id") id : Int) : Manifest
 
 //    @GET("/public/collection/v1/search")
 //    suspend fun getMasterPieceWithImage(@Query("q"))

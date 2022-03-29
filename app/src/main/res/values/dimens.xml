@@ -2,4 +2,11 @@
 <resources>
     <dimen name="preview_image_height">166dp</dimen>
     <dimen name="preview_image_radius">10dp</dimen>
+
+    <dimen name="description_detail_app_bar_height">278dp</dimen>
+
+    <dimen name="toolbar_elevation">5dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="plant_description_min_height">560dp</dimen>
 </resources>

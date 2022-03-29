@@ -1,7 +1,9 @@
 package com.komsonavt.MetropolitanGallery.artworks
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,7 @@ import com.komsonavt.MetropolitanGallery.base.AdapterDelegates
 import com.komsonavt.MetropolitanGallery.base.BaseDiffUtilItemCallback
 import com.komsonavt.MetropolitanGallery.base.BaseListItem
 import com.komsonavt.MetropolitanGallery.databinding.ArtworkImageItemBinding
+import com.komsonavt.MetropolitanGallery.descriptionMasterpiece.MasterpieceItem
 import com.komsonavt.core_network.model.Artwork
 
 //class ArtworkAdapter : AsyncListDifferDelegationAdapter<BaseListItem>(BaseDiffUtilItemCallback()) {
@@ -48,24 +51,37 @@ class ArtworkAdapter : PagingDataAdapter<Artwork, ArtworkViewHolder>(ArtworkDiff
 class ArtworkViewHolder(
     private val binding: ArtworkImageItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
-    init {
 
+    private fun navigateToMasterpiece(
+        artwork: Artwork,
+        view: View
+    ) {
+        val direction =
+            ArtworkFragmentDirections.actionDepartmentsFragmentToCatalogFragment(artwork.id!!,artwork.image_id!!)
+        view.findNavController().navigate(direction)
     }
 
     fun bind(item: Artwork) {
         binding.apply {
             binding.previewTitle.text = item.title
 
-            val image = "https://www.artic.edu/iiif/2/${item.image_id}/full/200,/0/default.jpg"
+            val image =
+                "https://www.artic.edu/iiif/2/${item.image_id}/full/200,/0/default.jpg"
             Glide.with(binding.root)
                 .load("https://www.artic.edu/iiif/2/${item.image_id}/full/200,/0/default.jpg")
                 .placeholder(R.drawable.no_image)
                 .transform(
-                    CenterCrop(), RoundedCorners(binding.root.resources.getDimensionPixelOffset(
-                        R.dimen.preview_image_radius))
+                    CenterCrop(), RoundedCorners(
+                        binding.root.resources.getDimensionPixelOffset(
+                            R.dimen.preview_image_radius
+                        )
+                    )
                 )
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.previewImage)
+        }
+        binding.root?.setOnClickListener{
+            navigateToMasterpiece(item, it)
         }
     }
 

@@ -1,4 +1,4 @@
-package com.komsonavt.core_network
+package com.komsonavt.MetropolitanGallery.dataSource
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

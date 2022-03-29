@@ -7,7 +7,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.komsonavt.MetropolitanGallery.base.BaseListItem
 import com.komsonavt.MetropolitanGallery.base.BaseViewModel
-import com.komsonavt.core_network.ArtworkRepository
+import com.komsonavt.MetropolitanGallery.dataSource.ArtworkRepository
 import com.komsonavt.core_network.model.Artwork
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
@@ -23,25 +23,10 @@ class ArtworkViewModel @Inject constructor(
     init {
         viewModelScope.launch(Dispatchers.IO) {
             _departmentLiveData.postValue(getLoaders())
-//            _departmentLiveData.postValue(getItems())
         }
     }
 
     fun getItems(): Flow<PagingData<Artwork>> {
         return repository.getArtworksResultStream().cachedIn(viewModelScope)
     }
-
-
-//    private suspend fun getItems() : List<ArtworkItem>{
-//
-//        var departmentItems = mutableListOf<ArtworkItem>()
-////        val artworks = api.getArtworks()
-////        for (artwork in api.getArtworks().data){
-////            departmentItems.add(ArtworkItem(
-////                id = artwork.id!!, title = artwork.title!!,
-////                image_id = artwork.image_id
-////            ))
-////        }
-//        return departmentItems
-//    }
 }
