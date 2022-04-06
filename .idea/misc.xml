@@ -10,6 +10,7 @@
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/drawable-v24/round_arrow_back_24.xml" value="0.122" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/drawable/art_institute_of_chicago_logo.xml" value="0.121" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/drawable/bg_placeholder.xml" value="0.121" />
+        <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/drawable/ic_back_anim_reverse.xml" value="0.1115" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/drawable/ic_launcher_background.xml" value="0.121" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/artwork_fragment.xml" value="0.1109375" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/artwork_image_item.xml" value="0.176" />
@@ -19,6 +20,7 @@
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/department_image_layout.xml" value="0.10989583333333333" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/departments_fragment.xml" value="0.10989583333333333" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/description_masterpiece_fragment.xml" value="0.176" />
+        <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/full_screen_image_fragment.xml" value="0.1" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/main_activity.xml" value="0.10989583333333333" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/layout/progress_shimmer_item.xml" value="0.176" />
         <entry key="..\:/Projects/MetropolitanGallery/app/src/main/res/mipmap-v26/ic_launcher.xml" value="0.121" />
