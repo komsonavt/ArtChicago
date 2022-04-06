@@ -83,5 +83,7 @@ dependencies {
 
     implementation libs.paging
 
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
+
      implementation project(":core-network") //TODO remove
 }

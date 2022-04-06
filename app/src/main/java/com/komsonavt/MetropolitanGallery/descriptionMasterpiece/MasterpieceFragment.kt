@@ -1,7 +1,10 @@
 package com.komsonavt.MetropolitanGallery.descriptionMasterpiece
 
+import android.R.attr.delay
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AccelerateInterpolator
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -12,14 +15,11 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.komsonavt.MetropolitanGallery.R
-import com.komsonavt.MetropolitanGallery.artworks.ArtworkAdapter
-import com.komsonavt.MetropolitanGallery.artworks.ArtworkViewModel
-import com.komsonavt.MetropolitanGallery.databinding.ArtworkFragmentBinding
 import com.komsonavt.MetropolitanGallery.databinding.DescriptionMasterpieceFragmentBinding
-import com.komsonavt.MetropolitanGallery.di.ArtworkComponent
 import com.komsonavt.MetropolitanGallery.di.MasterpieceComponent
 import com.komsonavt.MetropolitanGallery.viewBinding
 import kotlinx.coroutines.flow.collectLatest
+
 
 class MasterpieceFragment : Fragment(R.layout.description_masterpiece_fragment) {
 
@@ -68,6 +68,29 @@ class MasterpieceFragment : Fragment(R.layout.description_masterpiece_fragment) 
     private fun setupListeners(){
         binding.toolbar.setNavigationOnClickListener{
             view ->view.findNavController().navigateUp()
+
+            binding.detailImage.setOnClickListener {
+
+                view.setPivotX((view.width / 2).toFloat())
+                view.setPivotY((view.height / 2).toFloat())
+
+
+                val animator = ValueAnimator.ofFloat(0f, 1f)
+                animator.interpolator = AccelerateInterpolator()
+                animator.startDelay = delay.toLong()
+                animator.start()
+            }
         }
+    }
+
+    private fun imageAnimation(view: View){
+        view.setPivotX((view.width / 2).toFloat())
+        view.setPivotY((view.height / 2).toFloat())
+
+
+        val animator = ValueAnimator.ofFloat(0f, 1f)
+        animator.interpolator = AccelerateInterpolator()
+        animator.startDelay = delay.toLong()
+        animator.start()
     }
 }
